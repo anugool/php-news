@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^cate/([0-9]*)/(.*).html$ all-category.php?cate_id=$1&cate=$2
+RewriteRule ^p/([0-9]*)/(.*).html$ post-detail.php?topic_id=$1&topic=$2
+RewriteRule ^wcate/([0-9]*)/(.*).html$ webboard-category.php?cate_id=$1&cate=$2
+RewriteRule ^board/([0-9]*)/([0-9]*)/(.*).html$ webboard-detail.php?topic_id=$1&cate_id=$2&topic=$3
+</IfModule>
+ErrorDocument 404 /error404.php
